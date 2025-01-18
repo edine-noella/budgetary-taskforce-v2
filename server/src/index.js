@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import db from '../models/index.js';  
-// import allRoutes from './routes/router';
+import allRoutes from './routes/router';
 
 dotenv.config();  
 
@@ -16,7 +16,7 @@ app.use(bodyParser.json({ limit: '50mb' }));
 app.use(cors());
 
 // Routes
-// app.use('/api/v1', allRoutes);
+app.use('/api/v1', allRoutes);
 
 
 const server = app.listen(PORT, () => {
