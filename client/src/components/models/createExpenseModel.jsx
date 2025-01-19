@@ -240,7 +240,7 @@ const [
                     >
                        Sub Category    
                     </label>
-                    {/* a select contoller to select from the retrieved categories */}
+                    
                     <Controller
                         name="ExpensesSubCategoriesId"
                         control={control}
