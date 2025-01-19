@@ -64,6 +64,23 @@ class ExpensesCategoriesClass{
         }
     }
 
+    //function to delete all expense categories
+    static async deleteAllExpenseCategories(req, res) {
+        try {
+            await ExpensesCategories.destroy({ where: {} });
+            return res.status(200).json({
+                status: 200,
+                message: 'All expense categories deleted successfully'
+            });
+        } catch (error) {
+            return res.status(500).json({
+                status: 500,
+                message: 'Internal server error',
+                error: error.message
+            });
+        }
+    }
+
   
 }
 

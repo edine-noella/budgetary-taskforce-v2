@@ -62,7 +62,7 @@ class ExpensesClass{
         }
     }
 
-    //function that will get all income and add it's tatol amount and all expenses and add it's total amount and return the difference
+    
     static async getBalance(req, res) {
         try {
             const allIncome = await Income.findAll();
@@ -90,6 +90,21 @@ class ExpensesClass{
         }
     }
    
+  //function to delete all expenses
+    static async deleteAllExpenses(req, res) {
+        try {
+            await Expenses.destroy({ where: {} });
+            return res.status(200).json({
+                status: 200,
+                message: 'All expenses deleted successfully'
+            });
+        } catch (error) {
+            return res.status(500).json({
+                status: 500,
+                message: 'Internal server error',
+                error: error.message
+            });
+        }}
 
     
   

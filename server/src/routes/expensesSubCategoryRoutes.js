@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.post('/', ExpensesSubCategoriesClass.createExpenseSubCategory);
 router.get('/', ExpensesSubCategoriesClass.getAllExpenseSubCategories);
+router.delete('/', ExpensesSubCategoriesClass.deleteAllExpenseSubCategories);
 
 export default router;

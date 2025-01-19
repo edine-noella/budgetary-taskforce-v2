@@ -5,8 +5,7 @@ import CreateExpenseModel from "../components/models/createExpenseModel";
 function Expenses() {
  
   return (
-    <main>
-    
+    <main>    
     <CreateExpenseModel />  
       <ExpensesTable />
     </main>

@@ -72,6 +72,23 @@ class ExpensesSubCategoriesClass{
             });
         }
     }
+
+    //function to delete all expense sub categories
+    static async deleteAllExpenseSubCategories(req, res) {
+        try {
+            await ExpensesSubCategories.destroy({ where: {} });
+            return res.status(200).json({
+                status: 200,
+                message: 'All expense sub categories deleted successfully'
+            });
+        } catch (error) {
+            return res.status(500).json({
+                status: 500,
+                message: 'Internal server error',
+                error: error.message
+            });
+        }
+    }
   
 }
 

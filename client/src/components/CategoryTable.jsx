@@ -20,7 +20,7 @@ const CategoryTable = () => {
 
   useEffect(() => {
     categoryMutation();
-  },);
+  },[]);
 
   useEffect(() => {
     if (categoryListIsSuccess) {

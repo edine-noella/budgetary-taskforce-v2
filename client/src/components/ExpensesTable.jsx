@@ -88,7 +88,7 @@ const ExpensesTable = () => {
     {
       columns,
       data: filteredData,
-      initialState: { pageSize: 10 },
+      initialState: { pageSize: 50 },
     },
     useGlobalFilter,
     usePagination

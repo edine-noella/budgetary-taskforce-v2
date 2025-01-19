@@ -66,6 +66,26 @@ class IncomeClass{
             });
         }
     }
+
+    //function to delete all income
+    static async deleteAllIncome(req, res) {
+        try {
+            await Income.destroy({
+                where: {},
+                truncate: false
+            });
+            return res.status(200).json({
+                status: 200,
+                message: 'All income deleted successfully'
+            });
+        } catch (error) {
+            return res.status(500).json({
+                status: 500,
+                message: 'Internal server error',
+                error: error.message
+            });
+        }
+    }
   
 }
 
