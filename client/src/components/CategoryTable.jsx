@@ -1,5 +1,5 @@
 import 'core-js/stable';
-import 'regenerator-runtime/runtime';
+import 'regenerator-runtime/runtime'; 
 import { useState, useEffect, useMemo } from 'react';
 import Loading from '../components/Loading';
 import { useLazyGetAllExpensesCategoriesQuery } from '../states/api/apiSlice';
