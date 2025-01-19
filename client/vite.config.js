@@ -8,5 +8,8 @@ export default defineConfig({
     rollupOptions: {
       external: ['regenerator-runtime/runtime']
     }
+  },
+  optimizeDeps: {
+    include: ['regenerator-runtime/runtime']
   }
 })
