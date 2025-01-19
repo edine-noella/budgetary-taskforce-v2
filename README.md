@@ -63,6 +63,7 @@ To run Budgetary on your local machine, follow these steps:
 
 4.  Create a `.env` file in the `server` directory and add the following environment variables:
     DATABASE_URL=
+    PORT=
     ```
 
 5.  Start the backend server:
