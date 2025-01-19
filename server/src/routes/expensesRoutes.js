@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.post('/', ExpensesClass.createExpenses);
 router.get('/', ExpensesClass.getAllExpenses);
+router.get('/balance', ExpensesClass.getBalance);
 
 export default router;

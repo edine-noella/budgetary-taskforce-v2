@@ -4,7 +4,7 @@ import db from '../../models/index'
 
 dotenv.config();
 
-const { Expenses } = db;
+const { Expenses, Income } = db;
 
 class ExpensesClass{
    
@@ -62,6 +62,33 @@ class ExpensesClass{
         }
     }
 
+    //function that will get all income and add it's tatol amount and all expenses and add it's total amount and return the difference
+    static async getBalance(req, res) {
+        try {
+            const allIncome = await Income.findAll();
+            const allExpenses = await Expenses.findAll();
+            let totalIncome = 0;
+            let totalExpenses = 0;
+            allIncome.forEach(income => {
+                totalIncome += income.amount;
+            });
+            allExpenses.forEach(expense => {
+                totalExpenses += expense.amount;
+            });
+            const balance = totalIncome - totalExpenses;
+            return res.status(200).json({
+                status: 200,
+                message: 'Balance',
+                data: balance
+            });
+        } catch (error) {
+            return res.status(500).json({
+                status: 500,
+                message: 'Internal server error',
+                error: error.message
+            });
+        }
+    }
    
 
     
